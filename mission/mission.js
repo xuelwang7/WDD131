@@ -1,20 +1,20 @@
-// Select the dropdown element from the HTML
-const themeSelector = document.querySelector('#theme');
+document.addEventListener("DOMContentLoaded", function () {
+    const themeSelector = document.getElementById("theme"); // Select the dropdown
+    const body = document.body; // Reference the body element
+    const logo = document.querySelector(".logo"); // Reference the logo img
 
-// Function to handle theme change
-function changeTheme() {
-    const body = document.body; // Select the body element
-    const logo = document.querySelector('.logo'); // Select the logo img element
-
-    // Check the current value of the theme selector
-    if (themeSelector.value === 'dark') {
-        body.classList.add('dark'); // Add dark class to the body
-        logo.src = './image/byui-logo_white.png'; // Change the logo to white version
-    } else {
-        body.classList.remove('dark'); // Remove the dark class
-        logo.src = './image/byui-logo_blue.webp'; // Change the logo back to blue version
+    // Function to handle theme change
+    function changeTheme() {
+        // Check the selected value
+        if (themeSelector.value === "dark") {
+            body.classList.add("dark"); // Add the 'dark' class to body
+            logo.src = "./image/byui-logo_white.png"; // Switch to white logo for dark theme
+        } else {
+            body.classList.remove("dark"); // Remove the 'dark' class from body
+            logo.src = "./image/byui-logo_blue.webp"; // Switch back to blue logo for light theme
+        }
     }
-}
 
-// Add an event listener to the themeSelector element to trigger the changeTheme function
-themeSelector.addEventListener('change', changeTheme);
+    // Add event listener to the select element
+    themeSelector.addEventListener("change", changeTheme);
+});
