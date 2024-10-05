@@ -60,26 +60,29 @@ main h2 {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
-    gap: 10px; /* Smaller gap for compact look */
-    justify-items: center; /* Center images in grid cells */
-    padding: 20px; /* Remove padding from gallery */
-    margin: 0 auto; /* Center the gallery horizontally with no margin */
-    max-width: 900px; /* Ensure the gallery doesn't exceed the container */
+    grid-template-columns: repeat(3, 1fr); /* Three equally spaced columns */
+    gap: 20px; /* Add some space between images */
+    justify-items: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 figure {
-    margin: 0; /* Remove margin from figure elements */
-    padding: 0; /* Remove padding from figure elements */
+    margin: 0;
+    padding: 0;
 }
-
 
 img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    width: 250px; /* Fixed width for all images */
+    height: 250px; /* Fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
+    border: 5px solid white; /* Add white border to the image */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
+    border-radius: 5px; /* Optional rounded corners */
 }
+
+
 
 footer {
     background-color: var(--primary-color);
