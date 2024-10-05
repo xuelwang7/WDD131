@@ -1,0 +1,124 @@
+/* Import the Mooli font */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* CSS Variables */
+:root {
+    --primary-color: #52489c;
+    --secondary-color: #59c3c3;
+    --accent-color: #f45b69;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: 'Mooli', sans-serif;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-family: var(--secondary-font);
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.2em;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+main h2 {
+    font-family: var(--secondary-font);
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+    gap: 10px; /* Smaller gap for compact look */
+    justify-items: center; /* Center images in grid cells */
+    padding: 20px; /* Remove padding from gallery */
+    margin: 0 auto; /* Center the gallery horizontally with no margin */
+    max-width: 900px; /* Ensure the gallery doesn't exceed the container */
+}
+
+figure {
+    margin: 0; /* Remove margin from figure elements */
+    padding: 0; /* Remove padding from figure elements */
+}
+
+
+img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* One column for small screens */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center;
+    }
+
+    nav a {
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
