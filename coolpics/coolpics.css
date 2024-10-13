@@ -121,7 +121,11 @@ img {
     z-index: 10; /* Ensure it stays above other content */
   }
   
+<<<<<<< HEAD
 .viewer img {
+=======
+  .viewer img {
+>>>>>>> origin/main
     border: none;
     width: auto;  /* Adjust width to auto to allow expansion */
     height: auto; /* Adjust height to auto to allow expansion */
@@ -133,7 +137,11 @@ img {
 }
 
   
+<<<<<<< HEAD
 .close-viewer {
+=======
+  .close-viewer {
+>>>>>>> origin/main
     position: absolute;
     top: 15px;
     right: 15px;
@@ -142,7 +150,11 @@ img {
     color: white;
     font-size: 2rem;
     cursor: pointer;
+<<<<<<< HEAD
 }
+=======
+  }
+>>>>>>> origin/main
 
 
 
