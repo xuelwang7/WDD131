@@ -121,7 +121,7 @@ img {
     z-index: 10; /* Ensure it stays above other content */
   }
   
-  .viewer img {
+.viewer img {
     border: none;
     width: auto;  /* Adjust width to auto to allow expansion */
     height: auto; /* Adjust height to auto to allow expansion */
@@ -133,7 +133,7 @@ img {
 }
 
   
-  .close-viewer {
+.close-viewer {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -142,7 +142,7 @@ img {
     color: white;
     font-size: 2rem;
     cursor: pointer;
-  }
+}
 
 
 
