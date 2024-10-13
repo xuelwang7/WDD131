@@ -67,6 +67,14 @@ main h2 {
     max-width: 900px;
     margin: 0 auto;
 }
+.gallery img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
 
 figure {
     margin: 0;
@@ -101,9 +109,90 @@ img {
     max-width: 100%;
 }
 
+.viewer {
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: grid;
+    place-items: center; /* Center the content using Grid */
+    z-index: 10; /* Ensure it stays above other content */
+  }
+  
+  .viewer img {
+    border: none;
+    width: auto;  /* Adjust width to auto to allow expansion */
+    height: auto; /* Adjust height to auto to allow expansion */
+    max-width: 90%;  /* Limit width to 90% of the viewer */
+    max-height: 90vh;  /* Limit height to 90% of the viewport height */
+    object-fit: contain;  /* Ensure the image fits without stretching */
+    border-radius: 10px; /* Rounded corners for aesthetics */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+  
+  .close-viewer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+
+
+
+.menu-button {
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.menu {
+    display: flex; /* Initially display the menu */
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.hide {
+    display: none; 
+}
+
+
+
+.viewer {
+    display: none;
+  }
+  
+  .viewer.active {
+    display: grid;
+  }
+
+@media (min-width: 786px) {
+    /* Additional styling for larger screens */
+    .viewer {
+      padding: 40px; /* Extra padding for larger screens */
+    }
+  
+    .viewer img {
+      max-width: 80%; /* Adjust width to fit larger screens */
+      max-height: 80%; /* Adjust height to maintain aspect ratio */
+    }
+  }
+
+
 @media (max-width: 900px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
@@ -123,5 +212,22 @@ img {
 
     header h1 {
         font-size: 2em;
+    }
+    .menu-button {
+        display: none; 
+    }
+
+    .menu {
+        display:flex; /* Show the menu links by default */
+
+    }
+}
+@media (max-width: 599px) {
+    .menu.hide {
+        display: none;
+    }
+
+    .menu-button {
+        display: block; /* Ensure the menu button shows on small screens */
     }
 }
