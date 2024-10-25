@@ -1,0 +1,114 @@
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+header {
+    background-color: #f3f3f3;
+    padding: 10px 20px;
+    border-bottom: 2px solid #323131;
+}
+
+.header-top {
+    text-align: center;
+    border-bottom: 1px solid #414040; /* 在标题和导航栏之间添加红色线条 */
+    padding-bottom: 10px; /* 在线条和导航栏之间提供空间 */
+}
+
+header h1 {
+    color: #3c3b3b;
+    margin: 0;
+}
+
+nav {
+    text-align: right;
+    padding-top: 10px; /* 在导航栏上方添加一些空间 */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* 保证链接在导航栏右侧 */
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #262626;
+    font-weight: bold;
+}
+
+/* ----------------------------------------------------------------- */
+
+
+#articles {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.book-info {
+    grid-column: 1;
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-right: 2px solid #ccc;
+}
+
+.info-block {
+    margin-bottom: 40px;  /* 增大信息块之间的间距 */
+}
+
+.info-item {
+    margin: 2px 0;  /* 减少信息项之间的间距 */
+}
+
+.book-details {
+    grid-column: 2;
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;  /* 与左侧信息块间距相匹配 */
+}
+
+.book-title {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.book-cover {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.book-description {
+    padding: 10px 0;
+}
+
+.filters {
+    grid-column: 3;
+    background-color: #f8f8f8;
+    border-left: 2px solid #ccc;
+    position: sticky;
+    top: 20px;
+    padding: 20px;
+}
