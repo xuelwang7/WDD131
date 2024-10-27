@@ -18,9 +18,14 @@ header {
 }
 
 header h1 {
-    color: #3c3b3b;
-    margin: 0;
+    font-size: 2em;  /* 调整标题的字体大小 */
+    color: #333;    
+    padding: 20px 0;  
+    text-align: center;  
+    margin: 0;  
+    background-color: #f4f4f4;  
 }
+
 
 nav {
     text-align: right;
@@ -62,14 +67,16 @@ nav ul li a {
     background-color: #f4f4f4;
     padding: 10px;
     border-right: 2px solid #ccc;
+    text-align: right;  /* 设置信息列表右对齐 */
 }
 
 .info-block {
-    margin-bottom: 40px;  /* 增大信息块之间的间距 */
+    margin-bottom: 40px;
 }
 
 .info-item {
-    margin: 2px 0;  /* 减少信息项之间的间距 */
+    margin: 2px 0;
+    display: block; /* 确保每项信息都能单独占据一行，并实现右对齐 */
 }
 
 .book-details {
@@ -82,7 +89,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 40px;  /* 与左侧信息块间距相匹配 */
+    margin-bottom: 40px;
 }
 
 .book-title {
@@ -111,4 +118,9 @@ nav ul li a {
     position: sticky;
     top: 20px;
     padding: 20px;
+}
+
+.date {
+    font-size: 1.2em; /* 增大日期的字体大小 */
+    margin-bottom: 5px; /* 添加一点间隔 */
 }
