@@ -1,11 +1,18 @@
-body {
-  display: flex;
+form {
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  /* height: 100vh; */
+  margin: 0 auto;
+  width: 1000px;
 }
+form{
+  display: grid;
+  grid-template-columns: 1fr 3.6fr 1fr;
+  grid-template-rows:1fr 4fr 1fr 1fr;
 
+
+}
 .grid-container,
 .grid-container2 {
   display: grid;
@@ -22,6 +29,26 @@ body {
   align-items: center;
   justify-content: center;
 }
+.grid-container{
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  z-index: 2;
+
+}
+.grid-container .item-six-5-to-6{
+  grid-column: 5;
+  grid-row: 6;
+  padding-left: 0;
+}
+.grid-container2{
+  z-index: 1;
+  /* margin-top: 150px;
+  margin-left: -440px;
+  padding-right: 0px;  */
+  grid-column:2 / span 2;
+  grid-row: 2 / span 2;
+  
+}
 
 .grid-item {
   /* background-color: rgba(255, 255, 255, 0.8); */
@@ -33,12 +60,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .grid-item.black-bar {
   padding: 0; 
   margin-top: -10px; 
   margin-bottom: -10px; 
   /* padding-top: 15px;  */
-  padding-bottom: 50px; 
+  padding-bottom: 50px;
+  margin-right: -20px; 
 }
 
 .input-expiration {
@@ -71,11 +100,19 @@ body {
   grid-column: 1 / 7;
   padding:1px;
 }
+.grid-container .item-five {
+  grid-row: 4 / 7;
+  grid-column: 1 / 7;
+  padding:1px;
+  
 
-.item-five {
+}
+.grid-container2 .item-five {
   grid-row: 5 / 6;
   grid-column: 1 / 7;
   padding:1px;
+  justify-self: end;
+  align-self: end;
 }
 
 .item-six-1-to-4 {
@@ -86,8 +123,8 @@ body {
 
 .item-six-5-to-6 {
   display: flex;
-  grid-row: 6 / 7;
-  grid-column: 5 / 7;
+  grid-row: 6 ;
+  grid-column: 6 ;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
@@ -179,7 +216,7 @@ body {
 }
 
 .button {
-  margin-left: -130px;
+  /* margin-left: -130px; */
   padding: 15px 40px;
   font-size: 16px;
   background-color: #f0f0f0;
@@ -190,6 +227,12 @@ body {
   transition: background-color 0.3s ease;
   display: block;
   text-align: center;
+}
+
+.button-container{
+  grid-column:2 ;
+  grid-row: 4;
+  justify-self: end;
 }
 
 .button:hover {

@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <form>
     <div class="grid-container">
         <div class="grid-item item-one-to-three-1-to-4" style=" height: 20px;"><span
                 style="font-weight: bold;">TOTAL: </span><span style="margin-left: 10px;">$199</span></div>
@@ -19,30 +20,30 @@
             <label for="card-number">CARD NUMBER</label> <!-- 添加标签以提高可访问性 -->
         </div>
         <div class="grid-item item-five" style="background-color: white;">
-            <input type="text" id="card-number" value="1234 5678 9101 1112" length="16" class="input-card-number">
+            <input type="text" id="card-number" placeholder="1234 5678 9101 1112" length="16" class="input-card-number" required pattern="\d{4} \d{4} \d{4} \d{4}">
         </div>
         
         <div class="grid-item item-six-1-to-4">
             <label for="card-holder">CARD HOLDER</label>
         </div>
         <div class="grid-item item-seven-1-to-4" style="background-color: white;margin-right: 20px;">
-            <input type="text" id="card-holder" name="card_holder" value="John Doe" class="input-card-holder">
+            <input type="text" id="card-holder" name="card_holder" placeholder="John Doe" class="input-card-holder" required >
         </div>
         <div class="grid-item item-six-5-to-6">
             <label for="expiration">EXPIRATION</label>
         </div>
         <!-- <div class="grid-item item-seven-5" style="background-color: white;margin-right: 10px;">MM</div> -->
         <div class="grid-item item-seven-5" style="background-color: white;margin-right: 10px;">
-            <input type="text" id="expiration-mm" name="expiration_mm" placeholder="MM" class="input-expiration">
+            <input type="text" id="expiration-mm" name="expiration_mm" placeholder="MM" class="input-expiration" required pattern="\d{2}" min="1" max="12">
         </div>
         <!-- <div class="grid-item item-seven-6" style="background-color: white;margin-left: 10px;">YY</div> -->
 
         <div class="grid-item item-seven-6" style="background-color: white;">
-            <input type="text" id="expiration-yy" name="expiration_yy" placeholder="YY" class="input-expiration">
+            <input type="text" id="expiration-yy" name="expiration_yy" placeholder="YY" class="input-expiration" required pattern="\d{2}">
         </div>
     </div>  
     <!-- card back -->
-    <div class="grid-container2" style="z-index: -1;margin-top: 150px;margin-left: -440px;padding-right: 0px;">
+    <div class="grid-container2">
         <div class="grid-item black-bar" style="grid-row: 1;
             grid-column: 1 / 7; background-color: black; "><span> </span></div>
 
@@ -50,15 +51,15 @@
             <!-- <span>CARD NUMBER</span> -->
         </div>
         <div class="grid-item item-five" style="grid-row: 5 / 6;
-            grid-column: 1 / 7; justify-content: flex-end;margin-right: 80px;">
+            grid-column: 1 / 7; justify-content: flex-end;margin-right: 12px;">
            <label for="cvc">CVC/CVV:</label>
         </div>
         <div class="grid-item item-six-1-to-4"></div>
         <!-- <div class="grid-item item-six-5-to-6" style="background-color: white;margin-right: 40px;padding-left: 4px;
 margin-left: 32px;">MM</div> -->
-         <div class="grid-item item-six-5-to-6" style="margin-right: 50px;  margin-left: 32px;">
+         <div class="grid-item item-six-5-to-6">
             <div class="inner-container">
-            <input type="text" id="exp-mm" name="exp_mm" placeholder="000" class="input-exp-mm">
+            <input type="text" id="exp-mm" name="exp_mm" placeholder="000" class="input-exp-mm" required pattern="\d{3}">
             </div>
         </div>
         <div class="grid-item item-seven-1-to-4" style="margin-right: 20px;"></div>
@@ -66,8 +67,9 @@ margin-left: 32px;">MM</div> -->
 
     </div>
     <!-- Submit  -->
-    <div style="text-align: center; margin-top: 720px;">
-        <input type="button" value="Submit" class="button" />
+    <div class= "button-container">
+        <input type="submit" value="Submit" class="button" />
     </div>
+</form>
 </body>
 </html>
