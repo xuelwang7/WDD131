@@ -154,6 +154,40 @@
   button:hover {
     background: #00b33c;
   }
+ 
+  .participants {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* two */
+    gap: 20px;  /* column */
+  }
+  
+  .btn-block {
+    grid-column: 1 / -1; 
+    justify-self: center; 
+    margin-top: 20px; 
+  }
+  #add {
+
+    grid-column: 1 / -1; /* all */
+  
+    justify-self: center; /* center the button */
+  
+    margin-top: 20px; 
+  
+    align-self: end; 
+  
+  }
+  
+  .participant1 {
+    grid-column: span 1; 
+  }
+  
+  .item {
+    display: flex; /* 使用弹性布局 */
+    flex-direction: column; /* 垂直布局 */
+  }
+
+  
   @media (max-width: 568px) {
     .columns div {
       width: 100%;
