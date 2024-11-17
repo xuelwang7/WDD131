@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+ :root {
+ --primary-color: #1B98E0;
+ --secondary-color: #59c3c3;
+ --text-dark: #333;
+ --text-light: #ebebeb;
+ --primary-font: Arial, Helvetica,sans-serif;
+ --secondary-font: "Pacifico";
+ }
+
+ h1, h2 {
+    font-family: var(--secondary-font);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: calc(100% - 40px);
+    max-width: 2000px;
+    margin: 10 auto;
+    padding: 2rem;
+    
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+}
+
+.logo-container img {
+    width: 64px;
+    height: 64px;
+}
+.logo-container h1 {
+    font-family: var(--secondary-font);
+    font-size: 3rem; 
+    margin: 0;
+    color: var(--text-dark);
+}
+
+/* .search-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+} */
+
+
+
+.search-container {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.search-button {
+    width: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    border-left: 1px solid #ccc;
+}
+
+/* 创建放大镜图标 */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search-icon::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #666;
+    border-radius: 50%;
+    transform: translate(-6px, -6px);
+}
+
+.search-icon::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 8px;
+    background-color: #666;
+    transform: translate(4px, 4px) rotate(45deg);
+}
+
+/* 悬停和焦点状态 */
+.search-button:hover .search-icon::after,
+.search-button:hover .search-icon::before,
+.search-input:focus ~ .search-button .search-icon::after,
+.search-input:focus ~ .search-button .search-icon::before {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+/* 移除输入框的默认轮廓，添加自定义焦点样式 */
+.search-input:focus {
+    outline: none;
+}
+
+.search-input:focus ~ .search-button {
+    border-left-color: var(--primary-color);
+}
+
+.search-container:focus-within {
+    border-color: var(--primary-color);
+}
+
+.recipe-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    padding: 1rem; /* 添加内边距 */
+}
+
+.recipe-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* 控制图片最大高度 */
+    overflow: hidden;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.recipe-content {
+    padding: 1rem;
+}
+
+.recipe-description {
+    display: none;
+}
+
+.recipe-content h2 {
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.tag {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin: 0 0.25rem 0.25rem 0;
+    font-size: 0.8rem;
+}
+
+.rating {
+    margin: 0.5rem 0;
+}
+
+.icon-star {
+    color: gold;
+}
+
+.icon-star-empty {
+    color: #ccc;
+}
+
+/* .social {
+    text-align: right;
+    margin-top: 2rem;
+}
+
+.social img {
+    width: 24px;
+    margin-left: 1rem;
+}
+
+.attribution {
+    font-size: 0.6em;
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+} */
+
+/* Footer Styles */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    margin-top: 2rem;
+    
+}
+
+.attribution {
+    font-size: 0.6em;
+    color: #666;
+}
+
+.social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social img {
+    width: 24px;
+    height: 24px;
+}
+
+.social a {
+    text-decoration: none;
+}
+
+
+
+
+/* Tablet breakpoint */
+@media (min-width: 600px) {
+    .container {
+        max-width: none;
+    }
+    
+    .recipe-card {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .recipe-image {
+        width: 50%;
+        height: auto;
+    }
+    
+    .recipe-content {
+        width: 50%;
+    }
+    
+    .recipe-description {
+        display: block; /* Show description on tablet and up */
+    }
+    footer {
+        /* 保持水平布局 */
+        flex-direction: row;
+        padding: 0.5rem;
+    }
+}
+
+/* Small desktop breakpoint */
+@media (min-width: 768px) {
+    .container {
+        max-width: none;
+    }
+    
+    .search-container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+
+/* Large desktop breakpoint */
+@media (min-width: 960px) {
+    .container {
+        max-width: none; /* Maximum width for large screens */
+    }
+    
+    .search-container {
+        max-width: 100%;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+    .search-container {
+        max-width: 100%;
+    }
+}
+
+/* Print styles */
+@media print {
+    .search-container,
+    .social,
+    .footer {
+        display: none;
+    }
+    
+    .recipe-description {
+        display: block;
+    }
+    
+    .recipe-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
