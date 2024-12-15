@@ -1,0 +1,92 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Project grid layout */
+.projects-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Ensure minimum width for project cards */
+.project-card {
+    min-width: 250px;
+    height: 300px;
+    transition: transform 0.3s ease;
+    background: black;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Project icon styling */
+.project-icon {
+    width: 60px;
+    height: 60px;
+    background: white;
+    margin: 70px auto;
+    border-radius: 4px;
+}
+
+/* Project card content area */
+.card-content {
+    background: white;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+/* Slider styles */
+.slider-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .projects-grid {
+        overflow-x: auto;
+        grid-template-columns: repeat(4, 250px);
+        justify-content: flex-start;
+        padding-bottom: 20px; /* Space for potential scrollbar */
+    }
+    
+    .projects-section {
+        overflow-x: hidden;
+    }
+}
+
+/* Hide scrollbar but keep functionality */
+.projects-grid::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}

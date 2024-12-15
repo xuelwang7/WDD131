@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xueli's Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="./styles/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-xl font-bold">Xueli</div>
+                <div>
+                    <a href="#" class="px-3 py-2 text-gray-700 hover:text-black">Home</a>
+                    <a href="#projects" class="px-3 py-2 text-gray-700 hover:text-black">Projects</a>
+                    <a href="contact.html" class="px-3 py-2 text-gray-700 hover:text-black">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-6">Hello! I'm Xueli</h1>
+            <p class="text-xl text-gray-600 mb-8">I am a Computer Science student at Brigham Young University with a perfect 4.0 GPA, combining strong academic excellence with practical industry experience. As a Teaching Assistant for Data Structures, Parallelism and Concurrency, and Discrete Mathematics, I've developed both technical expertise and leadership skills.</p>
+            <a href="#projects" class="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors">View My Work</a>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2">My Projects</h2>
+            <p class="text-gray-600">"here are some software projects"</p>
+        </div>
+        
+        <div class="projects-section">
+            <div class="projects-grid">
+                <!-- Project cards will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="bg-white max-w-4xl mx-auto mt-20 p-8 rounded-lg">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold" id="modalTitle">Project Title</h3>
+                <button class="text-gray-500 hover:text-gray-700" onclick="closeModal()">×</button>
+            </div>
+            <div class="slider-container mb-6">
+                <div class="slider" id="imageSlider">
+                    <!-- Slides will be inserted here -->
+                </div>
+                <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2" onclick="prevSlide()">←</button>
+                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2" onclick="nextSlide()">→</button>
+            </div>
+            <p id="modalDescription" class="text-gray-600"></p>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
