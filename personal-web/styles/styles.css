@@ -7,6 +7,53 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
 }
+.logo-container {
+    height: 40px; /*  */
+}
+
+.logo-image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+.window-preview {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.window-header {
+    background: #f8f9fa;
+    padding: 12px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.window-dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e0e0e0;
+}
+
+.window-content {
+    height: 400px;
+    background: white;
+    /* padding: 20px; */
+    overflow: hidden;
+}
+
+.window-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
 
 /* Project grid layout */
 .projects-section {
@@ -26,34 +73,52 @@
 
 /* Ensure minimum width for project cards */
 .project-card {
-    min-width: 250px;
-    height: 300px;
     transition: transform 0.3s ease;
-    background: black;
+    background: white;
     border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
 }
 
-/* Project icon styling */
+.project-preview {
+    position: relative;
+    width: 100%;
+    height: 240px; /* 调整预览图片的高度 */
+    background: black;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8; /* 让图片稍微暗一点，保持设计感 */
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    opacity: 1;
+}
+
 .project-icon {
+    position: absolute;
     width: 60px;
     height: 60px;
     background: white;
-    margin: 70px auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 4px;
+    z-index: 2;
 }
 
-/* Project card content area */
 .card-content {
-    background: white;
     padding: 1.5rem;
-    margin-top: auto;
+    background: white;
 }
 
 /* Slider styles */
@@ -84,7 +149,11 @@
         overflow-x: hidden;
     }
 }
-
+@media (max-width: 768px) {
+    .window-preview {
+        margin-top: 2rem;
+    }
+}
 /* Hide scrollbar but keep functionality */
 .projects-grid::-webkit-scrollbar {
     height: 0;

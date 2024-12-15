@@ -8,7 +8,10 @@ export class ProjectCard {
         const card = document.createElement('div');
         card.className = 'project-card';
         card.innerHTML = `
-            <div class="project-icon"></div>
+            <div class="project-preview">
+                <img src="${this.project.images[0]}" alt="${this.project.title}" class="project-image">
+                <div class="project-icon"></div>
+            </div>
             <div class="card-content">
                 <h3 class="text-lg font-medium mb-4">${this.project.title}</h3>
                 <button class="text-gray-600 hover:text-black">See More →</button>
